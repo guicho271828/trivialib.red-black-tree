@@ -1,0 +1,19 @@
+
+README.org,70
+* Trivialib.Rbtree  - Red-Black tree implementation using Trivia,2,1
+
+trivialib.red-black-tree.asd,18
+  Copyright 3,62
+
+trivialib.red-black-tree.asd~,18
+  Copyright 3,54
+
+trivialib.red-black-tree.test.asd,18
+  Copyright 3,62
+
+trivialib.red-black-tree.test.asd~,18
+  Copyright 3,54
+
+testscr.lisp,0
+
+run-test.sh,0

@@ -1,5 +1,5 @@
 
-* Trivialib.Rbtree  - Red-Black tree implementation using Trivia, original code by m2ym
+* Trivialib.Red-Black-Tree  - Red-Black tree implementation using Trivia, original code by m2ym
 
 ** Usage
 
