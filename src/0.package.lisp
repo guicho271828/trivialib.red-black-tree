@@ -4,6 +4,7 @@
   (:shadowing-import-from :immutable-struct :defstruct :ftype)
   (:export :leaf
            :leaf-p
+           :rb-tree
            :rb-node
            :rb-node-p
            :rb-node-color
