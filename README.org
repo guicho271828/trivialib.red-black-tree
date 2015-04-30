@@ -1,0 +1,39 @@
+
+* Trivialib.Rbtree  - Red-Black tree implementation using Trivia, original code by m2ym
+
+** Usage
+
+** Dependencies
+
+This library is at least tested on implementation listed below:
+
++ SBCL 1.2.8 on X86-64 Linux  3.13.0-49-generic (author's environment)
+
+Also, it depends on the following libraries:
+
++ trivia by Masataro Asai ::
+    NON-optimized pattern matcher compatible with OPTIMA, with extensible optimizer interface and clean codebase
+
++ alexandria by  ::
+    Alexandria is a collection of portable public domain utilities.
+
+
+
+** Installation
+
+
+** Author
+
++ Masataro Asai (guicho2.71828@gmail.com)
+
+* Copyright
+
+Copyright (c) 2015 Masataro Asai (guicho2.71828@gmail.com)
+
+
+* License
+
+Licensed under the LLGPL License.
+
+
+
