@@ -14,6 +14,7 @@
   :author "Masataro Asai"
   :license "LLGPL"
   :depends-on (:trivialib.red-black-tree
+               :iterate
                :fiveam)
   :components ((:module "t"
                 :components

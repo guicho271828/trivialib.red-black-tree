@@ -22,12 +22,12 @@
   :author "Masataro Asai"
   :mailto "guicho2.71828@gmail.com"
   :license "LLGPL"
-  :depends-on (:trivia :alexandria)
+  :depends-on (:trivia :alexandria :immutable-struct)
   :pathname "src"
   :components
-  ((:file "package")
-   (:file "types")
-   (:file "rb-tree"))
+  ((:file "0.package")
+   (:file "1.types")
+   (:file "2.rb-tree"))
   :serial t
   :description "Red-Black tree implementation using Trivia, original code by m2ym"
   :in-order-to ((test-op (load-op :trivialib.red-black-tree.test))))

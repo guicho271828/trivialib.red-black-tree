@@ -1,20 +1,21 @@
 #|
-  This file is a part of trivialib.rbtree project.
+  This file is a part of trivialib.red-black-tree project.
   Copyright (c) 2015 Masataro Asai (guicho2.71828@gmail.com)
 |#
 
 (in-package :cl-user)
-(defpackage :trivialib.rbtree.test
+(defpackage :trivialib.red-black-tree.test
   (:use :cl
-        :trivialib.rbtree
+        :iterate
+        :trivialib.red-black-tree
         :fiveam
         :trivia :alexandria))
-(in-package :trivialib.rbtree.test)
+(in-package :trivialib.red-black-tree.test)
 
 
 
-(def-suite :trivialib.rbtree)
-(in-suite :trivialib.rbtree)
+(def-suite :trivialib.red-black-tree)
+(in-suite :trivialib.red-black-tree)
 
 ;; run test with (run! test-name) 
 
