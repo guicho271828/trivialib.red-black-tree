@@ -29,4 +29,5 @@
            :rb-member-after
            :rb-member-before
            :rb-remove-after
-           :rb-remove-before))
+           :rb-remove-before
+           :leafp))

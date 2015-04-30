@@ -106,30 +106,28 @@
 (defun rb-remove (tree x)
   (labels
       ((rec (tree)
-	 (match tree
-           ((rb-node color left y content right)
-	    (cond
-              ((< x y)
-               (if (leaf-p left)
-                   (balance (rb-node color left y content right))
-                   (balance (rb-node color (rec left) y content right))))
-              ((= x y)
-               ;; the node was found! the things in the left are smaller and
-               ;; those in the right are larger than x
-               (multiple-value-ematch (rb-remove-minimum-node right)
-                 (((leaf) nil nil)
-                  left)
-                 ((subtree content label)
-                  (balance
-                   (rb-node color left label content subtree)))))
-              ((> x y)
-               (if (leaf-p right)
-                   (balance (rb-node color left y content right))
-                   (balance (rb-node color left y content (rec right))))))))))
-    (declare (ftype (function (rb-node) rb-tree) rec))
+	 (ematch tree
+           ((rb-node color (leaf) (and y (> x)) content right)
+            (balance (rb-node color (leaf) y content right)))
+           ((rb-node color left (and y (> x)) content right)
+            (balance (rb-node color (rec left) y content right)))
+           ((rb-node color left (= x) _ right)
+            ;; the node was found! the things in the left are smaller and
+            ;; those in the right are larger than x
+            (multiple-value-ematch (rb-remove-minimum-node right)
+              (((leaf) nil nil)
+               left)
+              ((subtree content label)
+               (balance
+                (rb-node color left label content subtree)))))
+           ((rb-node color left (and y (< x)) content (leaf))
+            (balance (rb-node color left y content (leaf))))
+           ((rb-node color left (and y (< x)) content right)
+            (balance (rb-node color left y content (rec right)))))))
+    (declare (cl:ftype (function (rb-node) rb-tree) rec))
     (if (typep tree 'leaf)
         tree
-        (match (rec tree)
+        (ematch (rec tree)
           ((and x (leaf)) x)
           ((rb-node _ left y content right)
            (black left y content right))))))

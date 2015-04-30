@@ -2,11 +2,12 @@
 
 ; red-black-tree
 
-(declaim (inline leaf rb-node red black))
+(declaim (inline leaf leafp rb-node red black))
 
 (defconstant +leaf+ 1193941380623146742) ;; magic number
 (defun leaf () +leaf+)
 (deftype leaf () `(eql ,+leaf+))
+(defun leafp (x) (typep x 'leaf))
 
 (deftype rb-tree ()
   `(or rb-node leaf))
