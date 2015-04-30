@@ -21,7 +21,7 @@
 
 (defparameter *tree* (leaf))
 
-(iter (for i from 0 below 50)
+(iter (for i from 0 below 10000)
       (setf *tree* (rb-insert *tree* i)))
 
 (test rb-tree
