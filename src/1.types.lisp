@@ -26,10 +26,12 @@
 ;;   (format s "LEAF"))
 
 (defmethod print-object ((o rb-node) s)
-  (match o
-    ((rb-node color left label content right)
-     (write (list color label content
-		  left right) :stream s))))
+  (if *print-readably*
+      (call-next-method)
+      (match o
+        ((rb-node color left label content right)
+         (write (list color label content
+                      left right) :stream s)))))
 
 (ftype red t real t t rb-node)
 (defun red (left label content right)
